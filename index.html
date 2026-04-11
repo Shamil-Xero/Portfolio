@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shamil — Student, Developer, Creator. Portfolio showcasing projects, tools, and more." />
+  <title>Shamil — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">home</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="tools.html">tools</a></li>
+        <li><a href="fun.html">fun</a></li>
+        <li><a href="#sites">sites</a></li>
+        <li><a href="anon.html">message</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="section hero">
+    <div class="container hero-content">
+      <div class="hero-status fade-in">
+        <span class="status-dot"></span>
+        <span>SYSTEM_ONLINE</span>
+      </div>
+      <h1 class="hero-name fade-in">Shamil</h1>
+      <p class="hero-tagline fade-in">CS Undergraduate <span class="hl">//</span> Developer <span class="hl">//</span> Systems Enthusiast</p>
+      <p class="hero-desc fade-in">
+        I focus on software development, backend systems, and building practical solutions.
+        Welcome to my corner of the internet.
+      </p>
+      <div class="hero-cta fade-in">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="tools.html" class="btn btn-outline">Try My Tools</a>
+        <a href="resume.pdf" class="btn btn-ghost" download>📄 Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">// portfolio</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Things I've built and am currently working on.</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="card project-card fade-in">
+          <div class="project-badge finished">✓ Finished</div>
+          <h3 class="card-title">ClassSnap</h3>
+          <p class="project-desc">An intelligent attendance tracking system that uses computer vision and facial recognition to automate the process.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline btn-sm">View →</a>
+            <a href="#" class="btn btn-ghost btn-sm">Code</a>
+          </div>
+        </div>
+
+        <div class="card project-card fade-in">
+          <div class="project-badge finished">✓ Finished</div>
+          <h3 class="card-title">MacroPad</h3>
+          <p class="project-desc">A custom-built physical macro pad designed for improving productivity and streamlining workflows.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Hardware</span>
+            <span class="tech-tag">Automation</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline btn-sm">View →</a>
+            <a href="#" class="btn btn-ghost btn-sm">Code</a>
+          </div>
+        </div>
+
+        <div class="card project-card fade-in">
+          <div class="project-badge tool">⚡ Tool</div>
+          <h3 class="card-title">Phone Automations</h3>
+          <p class="project-desc">Custom automations for managing phone modes and handling automated SMS responses based on context.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">Scripting</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline btn-sm">View →</a>
+            <a href="#" class="btn btn-ghost btn-sm">Code</a>
+          </div>
+        </div>
+
+        <div class="card project-card fade-in">
+          <div class="project-badge ongoing">◉ Ongoing</div>
+          <h3 class="card-title">Student Management System</h3>
+          <p class="project-desc">A comprehensive system handling CRUD operations, room allocation, and management dashboard.</p>
+          <div class="project-tech">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">Web Tech</span>
+            <span class="tech-tag">Backend</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline btn-sm">View →</a>
+            <a href="#" class="btn btn-ghost btn-sm">Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">// about_me</span>
+        <h2 class="section-title">About</h2>
+      </div>
+
+      <div class="about-content fade-in">
+        <div class="about-text">
+          <div class="terminal-block">
+            <span class="prompt">&gt; whoami</span><br>
+            A Computer Science undergraduate based in India with a strong focus on software development, systems, and practical implementation of concepts.
+          </div>
+          <p>
+            I'm deeply interested in Large Language Models (LLMs), AI, open-source technologies, and building impactful solutions for real-world problems. When I'm not coding, you can find me tinkering with Linux environments like Arch Linux.
+          </p>
+        </div>
+
+        <div class="skills-section">
+          <h3>// tech_stack & interests</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">C, Java, PHP</span>
+            <span class="skill-tag">Python & JS</span>
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">System Design</span>
+            <span class="skill-tag">Arch Linux</span>
+            <span class="skill-tag">LLMs & AI</span>
+          </div>
+
+          <div class="stat-grid" style="margin-top: 1.5rem;">
+            <div class="stat-box">
+              <div class="stat-value">10+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">2+</div>
+              <div class="stat-label">Years</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Passion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== USEFUL WEBSITES ========== -->
+  <section id="sites" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">// bookmarks</span>
+        <h2 class="section-title">Useful Sites</h2>
+        <p class="section-subtitle">Websites I use regularly and recommend.</p>
+      </div>
+
+      <div class="websites-grid fade-in">
+        <a href="https://github.com" target="_blank" class="website-card">
+          <div class="website-icon">🐙</div>
+          <div class="website-info">
+            <div class="website-name">GitHub</div>
+            <div class="website-desc">Code hosting & version control</div>
+          </div>
+        </a>
+        <a href="https://stackoverflow.com" target="_blank" class="website-card">
+          <div class="website-icon">📚</div>
+          <div class="website-info">
+            <div class="website-name">Stack Overflow</div>
+            <div class="website-desc">Developer Q&A</div>
+          </div>
+        </a>
+        <a href="https://developer.mozilla.org" target="_blank" class="website-card">
+          <div class="website-icon">🔧</div>
+          <div class="website-info">
+            <div class="website-name">MDN Web Docs</div>
+            <div class="website-desc">Web technology reference</div>
+          </div>
+        </a>
+        <a href="https://figma.com" target="_blank" class="website-card">
+          <div class="website-icon">🎨</div>
+          <div class="website-info">
+            <div class="website-name">Figma</div>
+            <div class="website-desc">Design & prototyping</div>
+          </div>
+        </a>
+        <a href="https://chat.openai.com" target="_blank" class="website-card">
+          <div class="website-icon">🤖</div>
+          <div class="website-info">
+            <div class="website-name">ChatGPT</div>
+            <div class="website-desc">AI assistant</div>
+          </div>
+        </a>
+        <a href="https://vercel.com" target="_blank" class="website-card">
+          <div class="website-icon">▲</div>
+          <div class="website-info">
+            <div class="website-name">Vercel</div>
+            <div class="website-desc">Frontend deployment</div>
+          </div>
+        </a>
+        <a href="https://codepen.io" target="_blank" class="website-card">
+          <div class="website-icon">✏️</div>
+          <div class="website-info">
+            <div class="website-name">CodePen</div>
+            <div class="website-desc">Frontend playground</div>
+          </div>
+        </a>
+        <a href="https://notion.so" target="_blank" class="website-card">
+          <div class="website-icon">📓</div>
+          <div class="website-info">
+            <div class="website-name">Notion</div>
+            <div class="website-desc">Notes & organization</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">S.SYS</div>
+        <p>Made with ❤️ by Shamil · &copy; 2026</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== AI CHATBOT ========== -->
+  <div class="chat-widget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">🤖</button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <span>S.SYS AI</span>
+        <button class="chat-close" id="chatClose">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-message bot">Hi there! 👋 I'm Shamil's AI assistant. Ask me anything about his skills, projects, or interests.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." autocomplete="off"/>
+        <button class="chat-send" id="chatSend">➔</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

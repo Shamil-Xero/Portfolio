@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Productivity tools — World Clock, Pomodoro Timer, Notes, Todo, Weather, Habit Tracker, Typing & Reaction Tests." />
+  <title>Tools — Shamil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="tools.html" class="active">tools</a></li>
+        <li><a href="fun.html">fun</a></li>
+        <li><a href="index.html#sites">sites</a></li>
+        <li><a href="anon.html">message</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <header class="page-header">
+    <div class="container">
+      <p class="page-header-tag fade-in">// productivity</p>
+      <h1 class="page-header-title fade-in">Tools</h1>
+      <p class="page-header-subtitle fade-in">Handy utilities built with vanilla JavaScript — all running in your browser.</p>
+    </div>
+  </header>
+
+  <!-- ========== TOOLS GRID ========== -->
+  <section id="tools" class="section">
+    <div class="container">
+      <div class="tools-grid">
+
+        <!-- World Clock -->
+        <div class="card fade-in" id="clockCard">
+          <h3 class="card-title">🕐 World Clock</h3>
+          <div class="clock-display" id="clockDisplay">00:00:00</div>
+          <p class="clock-date" id="clockDate"></p>
+          <div class="world-clock-list" id="worldClockList"></div>
+        </div>
+
+        <!-- Pomodoro Timer -->
+        <div class="card fade-in" id="pomodoroCard">
+          <h3 class="card-title">🍅 Pomodoro</h3>
+          <div class="pomo-display" id="pomoDisplay">25:00</div>
+          <div class="pomo-controls">
+            <button class="btn btn-sm btn-primary" id="pomoStart">Start</button>
+            <button class="btn btn-sm btn-outline" id="pomoPause">Pause</button>
+            <button class="btn btn-sm btn-ghost" id="pomoReset">Reset</button>
+          </div>
+          <div class="pomo-stats">
+            <span>Sessions: <span class="stat-num" id="pomoSessions">0</span></span>
+            <span>Focus: <span class="stat-num" id="pomoFocusTime">0m</span></span>
+          </div>
+        </div>
+
+        <!-- Quick Notes -->
+        <div class="card fade-in" id="notesCard">
+          <h3 class="card-title">📝 Quick Notes</h3>
+          <textarea id="notesArea" class="notes-textarea" placeholder="Type your notes here..."></textarea>
+          <div class="notes-controls">
+            <button class="btn btn-sm btn-primary" id="notesSave">Save</button>
+            <button class="btn btn-sm btn-ghost" id="notesClear">Clear</button>
+          </div>
+          <p class="notes-status" id="notesStatus"></p>
+        </div>
+
+        <!-- To-Do List -->
+        <div class="card fade-in" id="todoCard">
+          <h3 class="card-title">✅ Todo List</h3>
+          <div class="todo-input-group">
+            <input type="text" id="todoInput" class="todo-input" placeholder="Add a task..." />
+            <button class="btn btn-sm btn-primary" id="todoAdd">Add</button>
+          </div>
+          <ul class="todo-list" id="todoList"></ul>
+        </div>
+
+        <!-- Weather -->
+        <div class="card fade-in" id="weatherCard">
+          <h3 class="card-title">🌤️ Weather</h3>
+          <div class="todo-input-group">
+            <input type="text" id="weatherInput" class="todo-input" placeholder="City name..." value="London" />
+            <button class="btn btn-sm btn-primary" id="weatherSearch">Search</button>
+          </div>
+          <div class="weather-display" id="weatherDisplay">
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Click search to get weather</p>
+          </div>
+        </div>
+
+        <!-- Habit Tracker -->
+        <div class="card fade-in" id="habitCard">
+          <h3 class="card-title">📊 Habit Tracker</h3>
+          <div class="todo-input-group">
+            <input type="text" id="habitInput" class="todo-input" placeholder="Add a habit..." />
+            <button class="btn btn-sm btn-primary" id="habitAdd">Add</button>
+          </div>
+          <div class="habit-list" id="habitList"></div>
+        </div>
+
+        <!-- Typing Speed Test -->
+        <div class="card fade-in" id="typingCard">
+          <h3 class="card-title">⌨️ Typing Test</h3>
+          <div class="typing-area" id="typingArea"></div>
+          <input type="text" class="typing-input" id="typingInput" placeholder="Start typing here..." autocomplete="off" />
+          <div class="typing-stats">
+            <span><span class="stat-num" id="typingWPM">0</span>WPM</span>
+            <span><span class="stat-num" id="typingAcc">100</span>%</span>
+            <span><span class="stat-num" id="typingTime">0</span>sec</span>
+          </div>
+          <div style="text-align:center; margin-top:0.75rem;">
+            <button class="btn btn-sm btn-ghost" id="typingReset">New Test</button>
+          </div>
+        </div>
+
+        <!-- Reaction Test -->
+        <div class="card fade-in" id="reactionCard">
+          <h3 class="card-title">⚡ Reaction Test</h3>
+          <div class="reaction-box waiting" id="reactionBox">
+            Click here to start
+          </div>
+          <p class="reaction-best" id="reactionBest">Best: --</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">S.SYS</div>
+        <p>Made with ❤️ by Shamil · &copy; 2026</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== AI CHATBOT ========== -->
+  <div class="chat-widget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">🤖</button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <span>S.SYS AI</span>
+        <button class="chat-close" id="chatClose">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-message bot">Hi there! 👋 I'm Shamil's AI assistant. Ask me anything about his skills, projects, or interests.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." autocomplete="off"/>
+        <button class="chat-send" id="chatSend">➔</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

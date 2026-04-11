@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Send an anonymous message to Shamil." />
+  <title>Anonymous Message — Shamil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="tools.html">tools</a></li>
+        <li><a href="fun.html">fun</a></li>
+        <li><a href="index.html#sites">sites</a></li>
+        <li><a href="anon.html" class="active">message</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <header class="page-header">
+    <div class="container">
+      <p class="page-header-tag fade-in">// transmission</p>
+      <h1 class="page-header-title fade-in">Anonymous Message</h1>
+      <p class="page-header-subtitle fade-in">Send me a message — completely anonymous. Say anything you want!</p>
+    </div>
+  </header>
+
+  <!-- ========== MESSAGE FORM ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="anon-form fade-in">
+        <div id="anonFormWrap">
+          <div class="form-group">
+            <label for="anonMessage">YOUR_MESSAGE</label>
+            <textarea id="anonMessage" placeholder="Type your anonymous message here..." rows="6"></textarea>
+          </div>
+          <button class="btn btn-primary" id="anonSend" style="width:100%;">
+            Transmit Message
+          </button>
+          <p id="anonStatus" style="font-family:var(--font-mono); font-size:0.82rem; text-align:center; margin-top:1rem; min-height:1.5em;"></p>
+        </div>
+        <div id="anonSuccess" class="form-success" style="display:none;">
+          <p style="font-size:1.5rem; margin-bottom:0.5rem;">✓</p>
+          <p>Message transmitted successfully!</p>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.5rem;">Your identity remains unknown.</p>
+          <button class="btn btn-outline btn-sm" id="anonAnother" style="margin-top:1rem;">Send Another</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">S.SYS</div>
+        <p>Made with ❤️ by Shamil · &copy; 2026</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== AI CHATBOT ========== -->
+  <div class="chat-widget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">🤖</button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <span>S.SYS AI</span>
+        <button class="chat-close" id="chatClose">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-message bot">Hi there! 👋 I'm Shamil's AI assistant. Ask me anything about his skills, projects, or interests.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." autocomplete="off"/>
+        <button class="chat-send" id="chatSend">➔</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

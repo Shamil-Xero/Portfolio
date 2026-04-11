@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fun zone — Quotes, Click Challenge, Mini Quiz, Random Facts, Memes, and more." />
+  <title>Fun — Shamil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="tools.html">tools</a></li>
+        <li><a href="fun.html" class="active">fun</a></li>
+        <li><a href="index.html#sites">sites</a></li>
+        <li><a href="anon.html">message</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <header class="page-header">
+    <div class="container">
+      <p class="page-header-tag fade-in">// entertainment</p>
+      <h1 class="page-header-title fade-in">Fun Zone</h1>
+      <p class="page-header-subtitle fade-in">Take a break with these little diversions and brain teasers.</p>
+    </div>
+  </header>
+
+  <!-- ========== FUN GRID ========== -->
+  <section id="fun" class="section">
+    <div class="container">
+      <div class="fun-grid">
+
+        <!-- Quotes -->
+        <div class="card fade-in" id="quoteCard">
+          <h3 class="card-title">💬 Quotes</h3>
+          <div style="margin-bottom: 0.75rem;">
+            <select id="quoteCategory" class="todo-input" style="flex: none; width: 100%; padding: 7px 10px; font-size: 0.82rem;">
+              <option value="all">All Categories</option>
+              <option value="tech">💻 Tech</option>
+              <option value="motivation">🔥 Motivation</option>
+              <option value="wisdom">🧠 Wisdom</option>
+            </select>
+          </div>
+          <blockquote class="quote-text" id="quoteText">"Click the button to get inspired!"</blockquote>
+          <p class="quote-author" id="quoteAuthor"></p>
+          <div class="quote-actions">
+            <button class="btn btn-primary btn-sm" id="quoteBtn">New Quote</button>
+            <button class="btn btn-ghost btn-sm" id="quoteSave">💾 Save</button>
+          </div>
+          <div id="savedQuotes" style="margin-top:1rem; max-height:120px; overflow-y:auto;"></div>
+        </div>
+
+        <!-- Click Challenge -->
+        <div class="card fade-in" id="clickerCard">
+          <h3 class="card-title">🎯 Click Challenge</h3>
+          <div class="clicker-score">Score: <span id="clickScore">0</span></div>
+          <button class="btn btn-primary clicker-btn" id="clickerBtn">Click Me!</button>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-ghost btn-sm" id="clickerReset" style="flex:1;">Reset</button>
+          </div>
+          <p style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted); text-align:center; margin-top:0.5rem;">
+            Best: <span id="clickerBest">0</span>
+          </p>
+        </div>
+
+        <!-- Mini Quiz -->
+        <div class="card fade-in" id="quizCard">
+          <h3 class="card-title">🧠 Mini Quiz</h3>
+          <p class="quiz-question" id="quizQuestion">Loading question...</p>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <p class="quiz-score" id="quizScore">Score: 0/0</p>
+            <button class="btn btn-ghost btn-sm" id="quizNext">Next →</button>
+          </div>
+        </div>
+
+        <!-- Random Facts -->
+        <div class="card fade-in" id="factsCard">
+          <h3 class="card-title">🎲 Random Facts</h3>
+          <div class="fact-text" id="factText">Click the button to learn something new!</div>
+          <button class="btn btn-primary" id="factBtn" style="width:100%;">New Fact</button>
+        </div>
+
+        <!-- Liked Videos -->
+        <div class="card fade-in" id="videosCard">
+          <h3 class="card-title">🎬 Curated Playlists</h3>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" target="_blank" class="website-card" style="margin:0;">
+              <div class="website-icon">📐</div>
+              <div class="website-info">
+                <div class="website-name">3Blue1Brown — Essence of Linear Algebra</div>
+                <div class="website-desc">Stunning math visualizations</div>
+              </div>
+            </a>
+            <a href="https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLROoGfR1tLCJCrKN_" target="_blank" class="website-card" style="margin:0;">
+              <div class="website-icon">🧬</div>
+              <div class="website-info">
+                <div class="website-name">StatQuest — Machine Learning</div>
+                <div class="website-desc">ML concepts made simple</div>
+              </div>
+            </a>
+            <a href="https://www.youtube.com/c/Fireship" target="_blank" class="website-card" style="margin:0;">
+              <div class="website-icon">🔥</div>
+              <div class="website-info">
+                <div class="website-name">Fireship</div>
+                <div class="website-desc">Tech in 100 seconds</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Book Summaries -->
+        <div class="card fade-in" id="booksCard">
+          <h3 class="card-title">📖 Book Notes</h3>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <div style="padding:0.75rem; background:var(--bg-surface); border-radius:var(--radius-sm); border-left:3px solid var(--accent);">
+              <strong style="font-size:0.9rem;">Atomic Habits</strong>
+              <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent); margin-left:0.5rem;">⭐ 5/5</span>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-top:0.3rem;">Small changes, remarkable results. The 1% improvement compound effect is real.</p>
+              <p style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); margin-top:0.3rem;">Key: Systems > Goals · Identity-based habits · Make it obvious, attractive, easy, satisfying</p>
+            </div>
+            <div style="padding:0.75rem; background:var(--bg-surface); border-radius:var(--radius-sm); border-left:3px solid var(--secondary);">
+              <strong style="font-size:0.9rem;">Deep Work</strong>
+              <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent); margin-left:0.5rem;">⭐ 4/5</span>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-top:0.3rem;">The ability to focus without distraction is becoming increasingly valuable and rare.</p>
+              <p style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); margin-top:0.3rem;">Key: Schedule deep work · Embrace boredom · Quit social media · Drain the shallows</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">S.SYS</div>
+        <p>Made with ❤️ by Shamil · &copy; 2026</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== AI CHATBOT ========== -->
+  <div class="chat-widget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">🤖</button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <span>S.SYS AI</span>
+        <button class="chat-close" id="chatClose">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-message bot">Hi there! 👋 I'm Shamil's AI assistant. Ask me anything about his skills, projects, or interests.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." autocomplete="off"/>
+        <button class="chat-send" id="chatSend">➔</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
