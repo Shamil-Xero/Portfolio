@@ -5,7 +5,7 @@
    ============================================================ */
 
 // Backend API URL — update this after deploying to Render
-const API_URL = 'https://your-backend.onrender.com';
+const API_URL = 'https://portfolio-770t.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
 
