@@ -1,6 +1,6 @@
-# S.SYS // Portfolio Architecture
+# Shamil - Portfolio Architecture
 
-Welcome to **Portfolio v2** — a fully self-hosted, minimal techno-themed personal portfolio and productivity hub built by Shamil.
+Welcome to **Portfolio v2** - a fully self-hosted, minimal techno-themed personal portfolio and productivity hub built by Shamil.
 
 Unlike a standard static portfolio, this project functions like a modular operating system. It features a suite of built-in frontend web applications, a floating AI assistant, and a dedicated Node.js Express backend API to securely handle analytics, dynamic chat, and anonymous message ingestion.
 
@@ -15,6 +15,7 @@ No heavy frameworks. Built cleanly for speed, accessibility, and high performanc
   * 🌤 Weather Engine
   * 📊 Habit & Streak Tracker
   * ⚡ Reaction Time Test
+  * 📚 Useful Sites / Bookmarks
 * **Focus Framework (`focus.html`)**: A distraction-free module with a fully customizable Pomodoro timer engine and World Clock sync.
 * **Keyboard Warrior (`typing.html`)**: A dynamic WPM/Accuracy engine with modes for generating random tech words or rendering famous quotes.
 * **AI Chat Widget**: A persistent floating terminal window living across all pages that hooks into the backend for context-aware Q&A about my skills and projects.
