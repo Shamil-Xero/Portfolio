@@ -66,8 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     navAnchors.forEach(a => {
       const href = a.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        a.classList.toggle('active', href === '#' + current);
+      if (href && (href.startsWith('#') || href.startsWith('index.html#'))) {
+        const targetId = href.split('#')[1];
+        a.classList.toggle('active', targetId === current);
       }
     });
   }
@@ -129,11 +130,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const pomoReset = document.getElementById('pomoReset');
   const pomoSessionsEl = document.getElementById('pomoSessions');
   const pomoFocusEl = document.getElementById('pomoFocusTime');
+  const pomoFocusInput = document.getElementById('pomoFocusInput');
+  const pomoBreakInput = document.getElementById('pomoBreakInput');
+  const pomoModeLabel = document.getElementById('pomoModeLabel');
 
   if (pomoDisplay && pomoStart && pomoPause && pomoReset) {
-    let pomoTime = 25 * 60, pomoInterval = null, pomoRunning = false;
+    let mode = 'FOCUS'; // FOCUS or BREAK
+    let pomoInterval = null;
+    let pomoRunning = false;
     let pomoSessions = parseInt(localStorage.getItem('pomo-sessions') || '0');
     let pomoFocusTotal = parseInt(localStorage.getItem('pomo-focus') || '0');
+    
+    // Initialize time based on input
+    let pomoTime = (pomoFocusInput ? parseInt(pomoFocusInput.value) : 25) * 60;
+
+    function getFocusMinutes() { return pomoFocusInput ? (parseInt(pomoFocusInput.value) || 25) : 25; }
+    function getBreakMinutes() { return pomoBreakInput ? (parseInt(pomoBreakInput.value) || 5) : 5; }
 
     function updatePomoStats() {
       if (pomoSessionsEl) pomoSessionsEl.textContent = pomoSessions;
@@ -142,34 +154,66 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePomoStats();
 
     function fmtTime(s) {
+      if (s < 0) s = 0;
       return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
     }
 
-    function updatePomo() { pomoDisplay.textContent = fmtTime(pomoTime); }
+    function updatePomo() { 
+      pomoDisplay.textContent = fmtTime(pomoTime); 
+      if (pomoModeLabel) {
+        pomoModeLabel.textContent = mode;
+        pomoModeLabel.style.color = mode === 'FOCUS' ? 'var(--accent)' : 'var(--success)';
+      }
+    }
+
+    // Update timer if inputs change while not running
+    if (pomoFocusInput) pomoFocusInput.addEventListener('change', () => {
+      if (!pomoRunning && mode === 'FOCUS') { pomoTime = getFocusMinutes() * 60; updatePomo(); }
+    });
+    if (pomoBreakInput) pomoBreakInput.addEventListener('change', () => {
+      if (!pomoRunning && mode === 'BREAK') { pomoTime = getBreakMinutes() * 60; updatePomo(); }
+    });
 
     pomoStart.addEventListener('click', () => {
       if (pomoRunning) return;
       pomoRunning = true;
       pomoInterval = setInterval(() => {
-        if (pomoTime > 0) { pomoTime--; updatePomo(); }
-        else {
+        if (pomoTime > 0) { 
+          pomoTime--; 
+          updatePomo(); 
+        } else {
           clearInterval(pomoInterval);
           pomoRunning = false;
-          pomoSessions++;
-          pomoFocusTotal += 25;
-          localStorage.setItem('pomo-sessions', pomoSessions);
-          localStorage.setItem('pomo-focus', pomoFocusTotal);
-          updatePomoStats();
-          pomoDisplay.textContent = '🎉 Done!';
+          
+          if (mode === 'FOCUS') {
+            pomoSessions++;
+            pomoFocusTotal += getFocusMinutes();
+            localStorage.setItem('pomo-sessions', pomoSessions);
+            localStorage.setItem('pomo-focus', pomoFocusTotal);
+            updatePomoStats();
+            mode = 'BREAK';
+            pomoTime = getBreakMinutes() * 60;
+            updatePomo();
+            pomoDisplay.textContent = '🎉 Break!';
+          } else {
+            mode = 'FOCUS';
+            pomoTime = getFocusMinutes() * 60;
+            updatePomo();
+            pomoDisplay.textContent = '💪 Focus!';
+          }
         }
       }, 1000);
     });
 
     pomoPause.addEventListener('click', () => { clearInterval(pomoInterval); pomoRunning = false; });
     pomoReset.addEventListener('click', () => {
-      clearInterval(pomoInterval); pomoRunning = false;
-      pomoTime = 25 * 60; updatePomo();
+      clearInterval(pomoInterval); 
+      pomoRunning = false;
+      mode = 'FOCUS';
+      pomoTime = getFocusMinutes() * 60; 
+      updatePomo();
     });
+    updatePomo();
   }
 
   /* ==========================================================
@@ -348,8 +392,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const typingAcc = document.getElementById('typingAcc');
   const typingTimeEl = document.getElementById('typingTime');
   const typingReset = document.getElementById('typingReset');
+  const typingMode = document.getElementById('typingMode');
 
-  const typingSentences = [
+  const typingQuotes = [
     "the quick brown fox jumps over the lazy dog near the riverbank",
     "a journey of a thousand miles begins with a single step forward",
     "programming is the art of telling another human what one wants the computer to do",
@@ -359,11 +404,28 @@ document.addEventListener('DOMContentLoaded', () => {
     "simplicity is the ultimate sophistication in both design and life",
   ];
 
+  const typingWordsList = "apple banana orange grape ocean guitar pixel keyboard screen abstract function system process terminal output design element component database network dynamic static virtual cloud framework compiler boolean variable constant object array index pointer reference syntax logic error debug".split(" ");
+
   if (typingArea && typingInput) {
     let typingText = '', typingStart = null, typingDone = false;
 
+    function generateRandomWords(count = 15) {
+      let words = [];
+      for(let i=0; i<count; i++) {
+        words.push(typingWordsList[Math.floor(Math.random() * typingWordsList.length)]);
+      }
+      return words.join(" ");
+    }
+
     function initTyping() {
-      typingText = typingSentences[Math.floor(Math.random() * typingSentences.length)];
+      const mode = typingMode ? typingMode.value : 'quotes';
+      
+      if (mode === 'words') {
+        typingText = generateRandomWords(20);
+      } else {
+        typingText = typingQuotes[Math.floor(Math.random() * typingQuotes.length)];
+      }
+
       typingDone = false;
       typingStart = null;
       typingInput.value = '';
@@ -374,6 +436,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (typingWPM) typingWPM.textContent = '0';
       if (typingAcc) typingAcc.textContent = '100';
       if (typingTimeEl) typingTimeEl.textContent = '0';
+      typingInput.focus();
+    }
+
+    if (typingMode) {
+      typingMode.addEventListener('change', initTyping);
     }
 
     initTyping();
@@ -409,6 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (val.length >= typingText.length) {
         typingDone = true;
         typingInput.disabled = true;
+        typingInput.blur();
       }
     });
 

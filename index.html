@@ -14,13 +14,11 @@
     <div class="nav-container">
       <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="active">home</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="tools.html">tools</a></li>
-        <li><a href="fun.html">fun</a></li>
-        <li><a href="#sites">sites</a></li>
-        <li><a href="anon.html">message</a></li>
+        <li><a href="index.html#home" class="active">home</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="tools.html">apps</a></li>
       </ul>
       <div class="nav-actions">
         <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
@@ -173,72 +171,32 @@
     </div>
   </section>
 
-  <!-- ========== USEFUL WEBSITES ========== -->
-  <section id="sites" class="section">
+  <!-- ========== CONTACT / MESSAGE FORM ========== -->
+  <section id="contact" class="section section-alt">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag">// bookmarks</span>
-        <h2 class="section-title">Useful Sites</h2>
-        <p class="section-subtitle">Websites I use regularly and recommend.</p>
+        <span class="section-tag">// transmission</span>
+        <h2 class="section-title">Anonymous Message</h2>
+        <p class="section-subtitle">Send me a message — completely anonymous. Say anything you want!</p>
       </div>
-
-      <div class="websites-grid fade-in">
-        <a href="https://github.com" target="_blank" class="website-card">
-          <div class="website-icon">🐙</div>
-          <div class="website-info">
-            <div class="website-name">GitHub</div>
-            <div class="website-desc">Code hosting & version control</div>
+      
+      <div class="anon-form fade-in" style="max-width: 600px; margin: 0 auto;">
+        <div id="anonFormWrap">
+          <div class="form-group">
+            <label for="anonMessage">YOUR_MESSAGE</label>
+            <textarea id="anonMessage" placeholder="Type your anonymous message here..." rows="6"></textarea>
           </div>
-        </a>
-        <a href="https://stackoverflow.com" target="_blank" class="website-card">
-          <div class="website-icon">📚</div>
-          <div class="website-info">
-            <div class="website-name">Stack Overflow</div>
-            <div class="website-desc">Developer Q&A</div>
-          </div>
-        </a>
-        <a href="https://developer.mozilla.org" target="_blank" class="website-card">
-          <div class="website-icon">🔧</div>
-          <div class="website-info">
-            <div class="website-name">MDN Web Docs</div>
-            <div class="website-desc">Web technology reference</div>
-          </div>
-        </a>
-        <a href="https://figma.com" target="_blank" class="website-card">
-          <div class="website-icon">🎨</div>
-          <div class="website-info">
-            <div class="website-name">Figma</div>
-            <div class="website-desc">Design & prototyping</div>
-          </div>
-        </a>
-        <a href="https://chat.openai.com" target="_blank" class="website-card">
-          <div class="website-icon">🤖</div>
-          <div class="website-info">
-            <div class="website-name">ChatGPT</div>
-            <div class="website-desc">AI assistant</div>
-          </div>
-        </a>
-        <a href="https://vercel.com" target="_blank" class="website-card">
-          <div class="website-icon">▲</div>
-          <div class="website-info">
-            <div class="website-name">Vercel</div>
-            <div class="website-desc">Frontend deployment</div>
-          </div>
-        </a>
-        <a href="https://codepen.io" target="_blank" class="website-card">
-          <div class="website-icon">✏️</div>
-          <div class="website-info">
-            <div class="website-name">CodePen</div>
-            <div class="website-desc">Frontend playground</div>
-          </div>
-        </a>
-        <a href="https://notion.so" target="_blank" class="website-card">
-          <div class="website-icon">📓</div>
-          <div class="website-info">
-            <div class="website-name">Notion</div>
-            <div class="website-desc">Notes & organization</div>
-          </div>
-        </a>
+          <button class="btn btn-primary" id="anonSend" style="width:100%;">
+            Transmit Message
+          </button>
+          <p id="anonStatus" style="font-family:var(--font-mono); font-size:0.82rem; text-align:center; margin-top:1rem; min-height:1.5em;"></p>
+        </div>
+        <div id="anonSuccess" class="form-success" style="display:none;">
+          <p style="font-size:1.5rem; margin-bottom:0.5rem;">✓</p>
+          <p>Message transmitted successfully!</p>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.5rem;">Your identity remains unknown.</p>
+          <button class="btn btn-outline btn-sm" id="anonAnother" style="margin-top:1rem;">Send Another</button>
+        </div>
       </div>
     </div>
   </section>

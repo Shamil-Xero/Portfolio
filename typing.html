@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Send an anonymous message to Shamil." />
-  <title>Anonymous Message — Shamil</title>
+  <meta name="description" content="Typing Speed Test — Test your WPM and accuracy." />
+  <title>Typing Test — Shamil</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,13 +14,11 @@
     <div class="nav-container">
       <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">home</a></li>
+        <li><a href="index.html#home">home</a></li>
         <li><a href="index.html#projects">projects</a></li>
         <li><a href="index.html#about">about</a></li>
-        <li><a href="tools.html">tools</a></li>
-        <li><a href="fun.html">fun</a></li>
-        <li><a href="index.html#sites">sites</a></li>
-        <li><a href="anon.html" class="active">message</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="tools.html">apps</a></li>
       </ul>
       <div class="nav-actions">
         <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
@@ -35,33 +33,39 @@
   <!-- ========== PAGE HEADER ========== -->
   <header class="page-header">
     <div class="container">
-      <p class="page-header-tag fade-in">// transmission</p>
-      <h1 class="page-header-title fade-in">Anonymous Message</h1>
-      <p class="page-header-subtitle fade-in">Send me a message — completely anonymous. Say anything you want!</p>
+      <p class="page-header-tag fade-in">// keyboard_warrior</p>
+      <h1 class="page-header-title fade-in">Typing Test</h1>
+      <p class="page-header-subtitle fade-in">Test your typing speed and accuracy.</p>
     </div>
   </header>
 
-  <!-- ========== MESSAGE FORM ========== -->
-  <section class="section">
-    <div class="container">
-      <div class="anon-form fade-in">
-        <div id="anonFormWrap">
-          <div class="form-group">
-            <label for="anonMessage">YOUR_MESSAGE</label>
-            <textarea id="anonMessage" placeholder="Type your anonymous message here..." rows="6"></textarea>
-          </div>
-          <button class="btn btn-primary" id="anonSend" style="width:100%;">
-            Transmit Message
-          </button>
-          <p id="anonStatus" style="font-family:var(--font-mono); font-size:0.82rem; text-align:center; margin-top:1rem; min-height:1.5em;"></p>
+  <!-- ========== TYPING ZONE ========== -->
+  <section id="typing" class="section" style="min-height: 50vh;">
+    <div class="container" style="max-width: 800px;">
+      
+      <div class="card fade-in" id="typingCard">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h3 class="card-title" style="margin-bottom: 0;">⌨️ Typing Test</h3>
+          <select id="typingMode" class="todo-input" style="width: auto; padding: 5px 10px; font-size: 0.85rem;">
+            <option value="quotes">Mode: Random Quotes</option>
+            <option value="words">Mode: Random Words</option>
+          </select>
         </div>
-        <div id="anonSuccess" class="form-success" style="display:none;">
-          <p style="font-size:1.5rem; margin-bottom:0.5rem;">✓</p>
-          <p>Message transmitted successfully!</p>
-          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.5rem;">Your identity remains unknown.</p>
-          <button class="btn btn-outline btn-sm" id="anonAnother" style="margin-top:1rem;">Send Another</button>
+        
+        <div class="typing-area" id="typingArea" style="font-size: 1.5rem; line-height: 1.6; min-height: 120px;"></div>
+        <input type="text" class="typing-input" id="typingInput" placeholder="Start typing here..." autocomplete="off" style="font-size: 1.2rem; padding: 1rem;" />
+        
+        <div class="typing-stats" style="justify-content: center; gap: 3rem; margin: 2rem 0; background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-sm);">
+          <span style="font-size: 1.2rem;"><span class="stat-num" id="typingWPM" style="font-size: 2.5rem; color: var(--accent);">0</span> WPM</span>
+          <span style="font-size: 1.2rem;"><span class="stat-num" id="typingAcc" style="font-size: 2.5rem; color: var(--success);">100</span> %</span>
+          <span style="font-size: 1.2rem;"><span class="stat-num" id="typingTime" style="font-size: 2.5rem;">0</span> sec</span>
+        </div>
+
+        <div style="text-align:center;">
+          <button class="btn btn-outline" id="typingReset">Restart Test</button>
         </div>
       </div>
+
     </div>
   </section>
 

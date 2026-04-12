@@ -14,13 +14,11 @@
     <div class="nav-container">
       <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">home</a></li>
+        <li><a href="index.html#home">home</a></li>
         <li><a href="index.html#projects">projects</a></li>
         <li><a href="index.html#about">about</a></li>
-        <li><a href="tools.html" class="active">tools</a></li>
-        <li><a href="fun.html">fun</a></li>
-        <li><a href="index.html#sites">sites</a></li>
-        <li><a href="anon.html">message</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="tools.html" class="active">apps</a></li>
       </ul>
       <div class="nav-actions">
         <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
@@ -44,30 +42,32 @@
   <!-- ========== TOOLS GRID ========== -->
   <section id="tools" class="section">
     <div class="container">
+      
+      <div class="tools-grid" style="margin-bottom: 2rem;">
+        <!-- Focus Mode Link -->
+        <a href="focus.html" class="card fade-in" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; border: 2px solid var(--accent); background: var(--accent-dim);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+          <h3 class="card-title" style="margin-bottom: 0.5rem; color: var(--accent);">Focus Mode</h3>
+          <p class="project-desc" style="color: var(--text-primary);">Distraction-free Pomodoro Timer & World Clock</p>
+        </a>
+
+        <!-- Typing Test Link -->
+        <a href="typing.html" class="card fade-in" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; border: 1px solid var(--border); transition: var(--transition);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">⌨️</div>
+          <h3 class="card-title" style="margin-bottom: 0.5rem;">Typing Test</h3>
+          <p class="project-desc">Test your WPM with Quotes or Tech Words</p>
+        </a>
+
+        <!-- Fun Zone Link -->
+        <a href="fun.html" class="card fade-in" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; border: 1px solid var(--border); transition: var(--transition);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎮</div>
+          <h3 class="card-title" style="margin-bottom: 0.5rem;">Fun Zone</h3>
+          <p class="project-desc">Mini Quiz, Click Challenge, Quotes & Facts</p>
+        </a>
+      </div>
+
+      <h2 style="font-family: var(--font-heading); margin-bottom: 1.5rem; font-size: 1.5rem;" class="fade-in">Mini Widgets</h2>
       <div class="tools-grid">
-
-        <!-- World Clock -->
-        <div class="card fade-in" id="clockCard">
-          <h3 class="card-title">🕐 World Clock</h3>
-          <div class="clock-display" id="clockDisplay">00:00:00</div>
-          <p class="clock-date" id="clockDate"></p>
-          <div class="world-clock-list" id="worldClockList"></div>
-        </div>
-
-        <!-- Pomodoro Timer -->
-        <div class="card fade-in" id="pomodoroCard">
-          <h3 class="card-title">🍅 Pomodoro</h3>
-          <div class="pomo-display" id="pomoDisplay">25:00</div>
-          <div class="pomo-controls">
-            <button class="btn btn-sm btn-primary" id="pomoStart">Start</button>
-            <button class="btn btn-sm btn-outline" id="pomoPause">Pause</button>
-            <button class="btn btn-sm btn-ghost" id="pomoReset">Reset</button>
-          </div>
-          <div class="pomo-stats">
-            <span>Sessions: <span class="stat-num" id="pomoSessions">0</span></span>
-            <span>Focus: <span class="stat-num" id="pomoFocusTime">0m</span></span>
-          </div>
-        </div>
 
         <!-- Quick Notes -->
         <div class="card fade-in" id="notesCard">
@@ -112,20 +112,7 @@
           <div class="habit-list" id="habitList"></div>
         </div>
 
-        <!-- Typing Speed Test -->
-        <div class="card fade-in" id="typingCard">
-          <h3 class="card-title">⌨️ Typing Test</h3>
-          <div class="typing-area" id="typingArea"></div>
-          <input type="text" class="typing-input" id="typingInput" placeholder="Start typing here..." autocomplete="off" />
-          <div class="typing-stats">
-            <span><span class="stat-num" id="typingWPM">0</span>WPM</span>
-            <span><span class="stat-num" id="typingAcc">100</span>%</span>
-            <span><span class="stat-num" id="typingTime">0</span>sec</span>
-          </div>
-          <div style="text-align:center; margin-top:0.75rem;">
-            <button class="btn btn-sm btn-ghost" id="typingReset">New Test</button>
-          </div>
-        </div>
+
 
         <!-- Reaction Test -->
         <div class="card fade-in" id="reactionCard">
@@ -136,6 +123,76 @@
           <p class="reaction-best" id="reactionBest">Best: --</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== USEFUL WEBSITES ========== -->
+  <section id="sites" class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">// bookmarks</span>
+        <h2 class="section-title">Useful Sites</h2>
+        <p class="section-subtitle">Websites I use regularly and recommend.</p>
+      </div>
+
+      <div class="websites-grid fade-in">
+        <a href="https://github.com" target="_blank" class="website-card">
+          <div class="website-icon">🐙</div>
+          <div class="website-info">
+            <div class="website-name">GitHub</div>
+            <div class="website-desc">Code hosting & version control</div>
+          </div>
+        </a>
+        <a href="https://stackoverflow.com" target="_blank" class="website-card">
+          <div class="website-icon">📚</div>
+          <div class="website-info">
+            <div class="website-name">Stack Overflow</div>
+            <div class="website-desc">Developer Q&A</div>
+          </div>
+        </a>
+        <a href="https://developer.mozilla.org" target="_blank" class="website-card">
+          <div class="website-icon">🔧</div>
+          <div class="website-info">
+            <div class="website-name">MDN Web Docs</div>
+            <div class="website-desc">Web technology reference</div>
+          </div>
+        </a>
+        <a href="https://figma.com" target="_blank" class="website-card">
+          <div class="website-icon">🎨</div>
+          <div class="website-info">
+            <div class="website-name">Figma</div>
+            <div class="website-desc">Design & prototyping</div>
+          </div>
+        </a>
+        <a href="https://chat.openai.com" target="_blank" class="website-card">
+          <div class="website-icon">🤖</div>
+          <div class="website-info">
+            <div class="website-name">ChatGPT</div>
+            <div class="website-desc">AI assistant</div>
+          </div>
+        </a>
+        <a href="https://vercel.com" target="_blank" class="website-card">
+          <div class="website-icon">▲</div>
+          <div class="website-info">
+            <div class="website-name">Vercel</div>
+            <div class="website-desc">Frontend deployment</div>
+          </div>
+        </a>
+        <a href="https://codepen.io" target="_blank" class="website-card">
+          <div class="website-icon">✏️</div>
+          <div class="website-info">
+            <div class="website-name">CodePen</div>
+            <div class="website-desc">Frontend playground</div>
+          </div>
+        </a>
+        <a href="https://notion.so" target="_blank" class="website-card">
+          <div class="website-icon">📓</div>
+          <div class="website-info">
+            <div class="website-name">Notion</div>
+            <div class="website-desc">Notes & organization</div>
+          </div>
+        </a>
       </div>
     </div>
   </section>

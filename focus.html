@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Focus mode — World Clock and Pomodoro Timer." />
+  <title>Focus — Shamil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span class="accent">.</span>SYS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">home</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="tools.html">apps</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <header class="page-header">
+    <div class="container">
+      <p class="page-header-tag fade-in">// deep_work</p>
+      <h1 class="page-header-title fade-in">Focus Mode</h1>
+      <p class="page-header-subtitle fade-in">Remove distractions. World clock and pomodoro timer for maximum productivity.</p>
+    </div>
+  </header>
+
+  <!-- ========== FOCUS ZONE ========== -->
+  <section id="focus" class="section" style="min-height: 50vh;">
+    <div class="container">
+      <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        
+        <!-- World Clock -->
+        <div class="card fade-in" id="clockCard" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <h3 class="card-title" style="text-align: left;">🕐 World Clock</h3>
+          <div class="clock-display" id="clockDisplay" style="font-size: 3rem;">00:00:00</div>
+          <p class="clock-date" id="clockDate" style="color: var(--accent); margin-bottom: 2rem;"></p>
+          <div class="world-clock-list" id="worldClockList" style="text-align: left; padding: 1rem; background: var(--bg-surface); border-radius: var(--radius-sm);"></div>
+        </div>
+
+        <!-- Pomodoro Timer -->
+        <div class="card fade-in" id="pomodoroCard" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <h3 class="card-title" style="text-align: left;">🍅 Pomodoro</h3>
+          <div class="pomo-settings" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">Focus (min)</label>
+              <input type="number" id="pomoFocusInput" value="25" min="1" max="90" class="todo-input" style="width: 70px; text-align: center; padding: 5px;">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">Break (min)</label>
+              <input type="number" id="pomoBreakInput" value="5" min="1" max="30" class="todo-input" style="width: 70px; text-align: center; padding: 5px;">
+            </div>
+          </div>
+          <div class="pomo-display" id="pomoDisplay" style="font-size: 4rem; margin-bottom: 1.5rem;">25:00</div>
+          <p id="pomoModeLabel" style="font-family: var(--font-mono); color: var(--accent); margin-bottom: 1.5rem;">FOCUS</p>
+          <div class="pomo-controls" style="justify-content: center; margin-bottom: 2rem;">
+            <button class="btn btn-primary" id="pomoStart">Start</button>
+            <button class="btn btn-outline" id="pomoPause">Pause</button>
+            <button class="btn btn-ghost" id="pomoReset">Reset</button>
+          </div>
+          <div class="pomo-stats" style="justify-content: center; gap: 2rem; background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-sm);">
+            <span>Sessions: <span class="stat-num" id="pomoSessions" style="font-size: 1.5rem;">0</span></span>
+            <span>Focus: <span class="stat-num" id="pomoFocusTime" style="font-size: 1.5rem;">0m</span></span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">S.SYS</div>
+        <p>Made with ❤️ by Shamil · &copy; 2026</p>
+        <div class="footer-status">
+          <span class="status-dot"></span>
+          <span>ONLINE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== AI CHATBOT ========== -->
+  <div class="chat-widget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">🤖</button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <span>S.SYS AI</span>
+        <button class="chat-close" id="chatClose">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-message bot">Hi there! 👋 I'm Shamil's AI assistant. Ask me anything about his skills, projects, or interests.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." autocomplete="off"/>
+        <button class="chat-send" id="chatSend">➔</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
