@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shamil - Student, Developer, Creator. Portfolio showcasing projects, tools, and more." />
-  <title>Shamil - Portfolio</title>
+  <meta name="description"
+    content="Shamil Irfan - CS Student, Backend Developer, Cloud & DevOps Enthusiast. Portfolio showcasing projects, homelab, and automation work." />
+  <title>Shamil Irfan - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- ========== NAVIGATION ========== -->
@@ -16,8 +19,9 @@
         <li><a href="index.html#home" class="active">home</a></li>
         <li><a href="index.html#projects">projects</a></li>
         <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#certifications">certifications</a></li>
         <li><a href="index.html#contact">contact</a></li>
-        <li><a href="tools.html">apps</a></li>
+
       </ul>
       <div class="nav-actions">
         <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
@@ -32,20 +36,26 @@
   <!-- ========== HERO ========== -->
   <section id="home" class="section hero">
     <div class="container hero-content">
-      <div class="hero-status fade-in">
-        <span class="status-dot"></span>
-        <span>SYSTEM_ONLINE</span>
+      <div class="hero-text">
+        <div class="hero-status fade-in">
+          <span class="status-dot"></span>
+          <span>SYSTEM_ONLINE</span>
+        </div>
+        <h1 class="hero-name fade-in">Shamil</h1>
+        <p class="hero-tagline fade-in">CS Undergraduate <span class="hl">//</span> Backend Developer <span
+            class="hl">//</span> Cloud & DevOps</p>
+        <p class="hero-desc fade-in">
+          Focused on automation, backend development, and cloud infrastructure.
+          Hands-on with self-hosted services, Docker, and GCP.
+        </p>
+        <div class="hero-cta fade-in">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#about" class="btn btn-outline">About Me</a>
+          <a href="Resume - Shamil Irfan F.pdf" class="btn btn-ghost" download>📄 Resume</a>
+        </div>
       </div>
-      <h1 class="hero-name fade-in">Shamil</h1>
-      <p class="hero-tagline fade-in">CS Undergraduate <span class="hl">//</span> Developer <span class="hl">//</span> Systems Enthusiast</p>
-      <p class="hero-desc fade-in">
-        I focus on software development, backend systems, and building practical solutions.
-        Welcome to my corner of the internet.
-      </p>
-      <div class="hero-cta fade-in">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="tools.html" class="btn btn-outline">Try My Tools</a>
-        <a href="resume.pdf" class="btn btn-ghost" download>📄 Resume</a>
+      <div class="hero-photo fade-in">
+        <img src="Shamil.jpg" alt="Shamil Irfan" class="profile-img" />
       </div>
     </div>
   </section>
@@ -61,12 +71,36 @@
 
       <div class="projects-grid">
         <div class="card project-card fade-in">
-          <div class="project-badge finished">✓ Finished</div>
-          <h3 class="card-title">ClassSnap</h3>
-          <p class="project-desc">An intelligent attendance tracking system that uses computer vision and facial recognition to automate the process.</p>
+          <div class="project-img">
+            <div class="project-img-placeholder">🤖</div>
+          </div>
+          <div class="project-badge ongoing">◉ Ongoing</div>
+          <h3 class="card-title">AI Butler (Alfred)</h3>
+          <p class="project-desc">A fully local AI assistant using a ReAct-based agentic loop running on Ollama.
+            Orchestrates tools for querying an Obsidian knowledge base via RAG, managing calendar, and executing
+            sandboxed scripts for automation.</p>
           <div class="project-tech">
             <span class="tech-tag">Python</span>
-            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">Ollama</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline btn-sm">View →</a>
+            <a href="#" class="btn btn-ghost btn-sm">Code</a>
+          </div>
+        </div>
+
+        <div class="card project-card fade-in">
+          <div class="project-img">
+            <div class="project-img-placeholder">📸</div>
+          </div>
+          <div class="project-badge finished">✓ Finished</div>
+          <h3 class="card-title">ClassSnap</h3>
+          <p class="project-desc">Facial recognition attendance system using Python and Flask on the backend, with
+            RetinaFace/DeepFace for recognition. Features a React dashboard and Raspberry Pi integration.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">React</span>
             <span class="tech-tag">Computer Vision</span>
           </div>
           <div class="project-links">
@@ -76,11 +110,34 @@
         </div>
 
         <div class="card project-card fade-in">
+          <div class="project-img">
+            <div class="project-img-placeholder">🖥️</div>
+          </div>
+          <div class="project-badge ongoing">◉ Ongoing</div>
+          <h3 class="card-title">HomeLab</h3>
+          <p class="project-desc">Self-hosted personal server infrastructure on Linux across a Raspberry Pi and laptop.
+            Manages services like Jellyfin, Nextcloud, Pi-hole, and local AI using Docker Compose.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Self-Hosting</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-outline btn-sm">View →</a>
+            <a href="#" class="btn btn-ghost btn-sm">Code</a>
+          </div>
+        </div>
+
+        <div class="card project-card fade-in">
+          <div class="project-img">
+            <div class="project-img-placeholder">⌨️</div>
+          </div>
           <div class="project-badge finished">✓ Finished</div>
           <h3 class="card-title">MacroPad</h3>
-          <p class="project-desc">A custom-built physical macro pad designed for improving productivity and streamlining workflows.</p>
+          <p class="project-desc">Software utility in AutoHotkey that intercepts keystrokes from an external keyboard
+            and maps them to multi-layer workflow automations with a custom GUI.</p>
           <div class="project-tech">
-            <span class="tech-tag">Hardware</span>
+            <span class="tech-tag">AutoHotkey</span>
             <span class="tech-tag">Automation</span>
           </div>
           <div class="project-links">
@@ -90,27 +147,16 @@
         </div>
 
         <div class="card project-card fade-in">
+          <div class="project-img">
+            <div class="project-img-placeholder">📱</div>
+          </div>
           <div class="project-badge tool">⚡ Tool</div>
-          <h3 class="card-title">Phone Automations</h3>
-          <p class="project-desc">Custom automations for managing phone modes and handling automated SMS responses based on context.</p>
+          <h3 class="card-title">Smart Phone Automations</h3>
+          <p class="project-desc">A collection of automations on a rooted Android device including AI-powered SMS
+            auto-reply, context-aware phone mode switching, and gesture controls.</p>
           <div class="project-tech">
-            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">Tasker</span>
             <span class="tech-tag">Scripting</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-outline btn-sm">View →</a>
-            <a href="#" class="btn btn-ghost btn-sm">Code</a>
-          </div>
-        </div>
-
-        <div class="card project-card fade-in">
-          <div class="project-badge ongoing">◉ Ongoing</div>
-          <h3 class="card-title">Student Management System</h3>
-          <p class="project-desc">A comprehensive system handling CRUD operations, room allocation, and management dashboard.</p>
-          <div class="project-tech">
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">Web Tech</span>
-            <span class="tech-tag">Backend</span>
           </div>
           <div class="project-links">
             <a href="#" class="btn btn-outline btn-sm">View →</a>
@@ -133,38 +179,77 @@
         <div class="about-text">
           <div class="terminal-block">
             <span class="prompt">&gt; whoami</span><br>
-            A Computer Science undergraduate based in India with a strong focus on software development, systems, and practical implementation of concepts.
+            Computer Science student focused on automation, backend development, and cloud infrastructure. Experienced
+            deploying and managing self-hosted services on Linux and Raspberry Pi.
           </div>
           <p>
-            I'm deeply interested in Large Language Models (LLMs), AI, open-source technologies, and building impactful solutions for real-world problems. When I'm not coding, you can find me tinkering with Linux environments like Arch Linux.
+            Familiar with GCP through academic and personal projects. Experienced with Python, Flask, and Docker.
+            Passionate about photo & video editing, system customization, electronics tinkering, and astrophysics.
           </p>
         </div>
 
         <div class="skills-section">
-          <h3>// tech_stack & interests</h3>
+          <h3>// tech_stack</h3>
           <div class="skills-grid">
-            <span class="skill-tag">C, Java, PHP</span>
-            <span class="skill-tag">Python & JS</span>
-            <span class="skill-tag">Data Structures</span>
-            <span class="skill-tag">System Design</span>
-            <span class="skill-tag">Arch Linux</span>
-            <span class="skill-tag">LLMs & AI</span>
+            <span class="skill-tag">C & Python</span>
+            <span class="skill-tag">HTML, CSS, JS</span>
+            <span class="skill-tag">React & Flask</span>
+            <span class="skill-tag">Docker & Git</span>
+            <span class="skill-tag">Linux & GCP</span>
+            <span class="skill-tag">MySQL & MongoDB</span>
+          </div>
+
+          <h3 style="margin-top: 1.5rem;">// interests</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">Photo & Video Editing</span>
+            <span class="skill-tag">System Customization</span>
+            <span class="skill-tag">Electronics Tinkering</span>
+            <span class="skill-tag">Astrophysics</span>
           </div>
 
           <div class="stat-grid" style="margin-top: 1.5rem;">
             <div class="stat-box">
-              <div class="stat-value">10+</div>
+              <div class="stat-value">5+</div>
               <div class="stat-label">Projects</div>
             </div>
             <div class="stat-box">
-              <div class="stat-value">2+</div>
-              <div class="stat-label">Years</div>
+              <div class="stat-value">B.E. CSE</div>
+              <div class="stat-label">Expected 2027</div>
             </div>
             <div class="stat-box">
-              <div class="stat-value">100%</div>
-              <div class="stat-label">Passion</div>
+              <div class="stat-value">8.5</div>
+              <div class="stat-label">CGPA</div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">// credentials</span>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">Courses and credentials I've earned.</p>
+      </div>
+
+      <div class="certs-grid">
+        <div class="card cert-card fade-in">
+          <div class="cert-img">
+            <div class="cert-img-placeholder">📜</div>
+          </div>
+          <h3 class="card-title">Cloud Computing</h3>
+          <p class="cert-issuer">NPTEL — Oct 2024</p>
+        </div>
+
+        <div class="card cert-card fade-in">
+          <div class="cert-img">
+            <div class="cert-img-placeholder">📜</div>
+          </div>
+          <h3 class="card-title">Modern Programming in C++</h3>
+          <p class="cert-issuer">NPTEL — Apr 2024</p>
         </div>
       </div>
     </div>
@@ -178,7 +263,7 @@
         <h2 class="section-title">Anonymous Message</h2>
         <p class="section-subtitle">Send me a message - completely anonymous. Say anything you want!</p>
       </div>
-      
+
       <div class="anon-form fade-in" style="max-width: 600px; margin: 0 auto;">
         <div id="anonFormWrap">
           <div class="form-group">
@@ -188,7 +273,9 @@
           <button class="btn btn-primary" id="anonSend" style="width:100%;">
             Transmit Message
           </button>
-          <p id="anonStatus" style="font-family:var(--font-mono); font-size:0.82rem; text-align:center; margin-top:1rem; min-height:1.5em;"></p>
+          <p id="anonStatus"
+            style="font-family:var(--font-mono); font-size:0.82rem; text-align:center; margin-top:1rem; min-height:1.5em;">
+          </p>
         </div>
         <div id="anonSuccess" class="form-success" style="display:none;">
           <p style="font-size:1.5rem; margin-bottom:0.5rem;">✓</p>
@@ -211,10 +298,11 @@
         <button class="chat-close" id="chatClose">✕</button>
       </div>
       <div class="chat-body" id="chatBody">
-        <div class="chat-message bot">Hi there! 👋 I'm Shamil's AI assistant. Ask me anything about his skills, projects, or interests.</div>
+        <div class="chat-message bot">Hi there! 👋 I'm Shamil's AI assistant. Ask me anything about his skills,
+          projects, or interests.</div>
       </div>
       <div class="chat-input-area">
-        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." autocomplete="off"/>
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." autocomplete="off" />
         <button class="chat-send" id="chatSend">➔</button>
       </div>
     </div>
@@ -222,4 +310,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
